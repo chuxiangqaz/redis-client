@@ -11,7 +11,7 @@
 
 ## 使用
 ```php
-$config = [ia
+$config = [
     // use php extensions config 'phpredis'
     'client' => 'predis',
     

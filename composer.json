@@ -1,5 +1,5 @@
 {
-    "name": "chuxiangqaz/redis-client",
+    "name": "chuxiangqaz/redis_client",
     "description": "PHP Packagist About Connection Redis Server",
     "type": "autoload library",
     "license": "MIT",
