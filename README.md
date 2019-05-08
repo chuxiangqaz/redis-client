@@ -27,7 +27,7 @@ $config = [
 $redisManager = new \CxRedis\RedisManager($config['client'], $config);
 $redisClient = $redisManager->connection();
 
-$redisClient->set('name', 'chuxiang');
+$redisClient->set('name', 'test');
 echo $redisClient->get('name');
 ```
 
