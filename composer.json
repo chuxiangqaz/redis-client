@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CxRedis\\": "src"
+            "CxRedis\\": "src/"
         }
     }
 }
