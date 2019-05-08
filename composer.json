@@ -1,0 +1,20 @@
+{
+    "name": "chuxiangqaz/redis-client",
+    "description": "PHP Packagist About Connection Redis Server",
+    "type": "autoload library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chu Xiang",
+            "email": "cxcoding@gmail.com"
+        }
+    ],
+    "require": {
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CxRedis\\": "src"
+        }
+    }
+}
