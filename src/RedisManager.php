@@ -75,7 +75,7 @@ class RedisManager
     {
         $name = $name ?: 'default';
 
-        $options = $this->config['options'] ?? [];
+        $options = isset($this->config['options']) ? $this->config['options'] : [];
 
         if (isset($this->config[$name])) {
             return $this->connector()->connect($this->config[$name], $options);
