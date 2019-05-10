@@ -50,7 +50,7 @@ class RedisManager
      * 按名称获取 Redis 连接
      *
      * @param null $name
-     * @return \Predis\Client|\Redis
+     * @return Connections\PhpRedisConnection|Connections\PredisConnection
      * @throws Exception
      */
     public function connection($name = null)
@@ -67,8 +67,8 @@ class RedisManager
     /**
      * 按名称解析给定的连接。
      *
-     * @param string|null $name
-     * @return null|\Redis|\Predis\Client
+     * @param string $name
+     * @return Connections\PhpRedisConnection|Connections\PredisConnection
      * @throws Exception
      */
     public function resolve($name)
@@ -87,16 +87,16 @@ class RedisManager
     /**
      * 获取连接客户端
      *
-     * @return Connectors\PhpRedis|Connectors\Predis
+     * @return Connectors\PhpConnectorConnector|Connectors\PredisConnector
      * @throws Exception
      */
     protected function connector()
     {
         switch ($this->driver) {
             case 'predis':
-                return new Connectors\Predis();
+                return new Connectors\PredisConnector();
             case 'phpredis':
-                return new Connectors\PhpRedis();
+                return new Connectors\PhpConnectorConnector();
         }
 
         throw new Exception('Redis driver [{$this->driver}] not use!');
@@ -115,7 +115,7 @@ class RedisManager
     /**
      * 将方法传递到默认的 Redis 连接。
      *
-     * @param $name
+     * @param string $name
      * @param $arguments
      * @return mixed
      * @throws Exception

@@ -6,10 +6,10 @@
  * Time: 11:39
  */
 
-namespace CxRedis\Connectors;
+namespace CxRedis\Contracts;
 
 
-interface RedisContract
+interface ConnectorContract
 {
     /**
      * 创建于客户端的连接

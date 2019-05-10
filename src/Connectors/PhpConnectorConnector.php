@@ -8,9 +8,11 @@
 
 namespace CxRedis\Connectors;
 
+use CxRedis\Connections\PhpRedisConnection;
+use CxRedis\Contracts\ConnectorContract;
 use Redis;
 
-class PhpRedis extends BaseRedis implements RedisContract
+class PhpConnectorConnector implements ConnectorContract
 {
 
     /**
@@ -18,12 +20,12 @@ class PhpRedis extends BaseRedis implements RedisContract
      *
      * @param array $config
      * @param array $options
-     * @return \Redis
+     * @return \CxRedis\Connections\PhpRedisConnection
      */
     public function connect(array $config, array $options)
     {
         $client = $this->createClient($config);
-        return $this->client = $client;
+        return new PhpRedisConnection($client);
     }
 
     /**

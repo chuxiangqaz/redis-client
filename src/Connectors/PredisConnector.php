@@ -8,16 +8,18 @@
 
 namespace CxRedis\Connectors;
 
+use CxRedis\Connections\PredisConnection;
+use CxRedis\Contracts\ConnectorContract;
 use Predis\Client;
 
-class Predis extends BaseRedis implements RedisContract
+class PredisConnector implements ConnectorContract
 {
     /**
      * 连接 Redis 客户端
      *
      * @param array $config
      * @param array $options
-     * @return \Predis\Client
+     * @return \CxRedis\Connections\PredisConnection
      */
     public function connect(array $config, array $options)
     {
@@ -31,6 +33,6 @@ class Predis extends BaseRedis implements RedisContract
             ['timeout' => 10.0], $options, $mergeOptions
         );
 
-        return $this->client = new Client($config, $formattedOptions);
+        return new PredisConnection(new Client($config, $formattedOptions));
     }
 }
