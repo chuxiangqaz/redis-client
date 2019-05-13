@@ -1,7 +1,7 @@
 # redis-client
 
 一个简单的 PHP 连接 Redis 拓展。
-> **原则：让其它驱动以 PhpRedis 驱动为模板！让原本使用 PhprRedis 客户端代码可以无缝切换到其他驱动。**
+> **原则：让其它驱动以 PhpRedis 驱动为模板！让原本使用 PhpRedis 客户端代码可以无缝切换到其他驱动。**
 
  - 支持 Predis
  - 支持 PhpRedis
