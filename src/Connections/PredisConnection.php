@@ -57,6 +57,17 @@ class PredisConnection extends BaseConnection implements ConnectionContract
     }
 
     /**
+     * 关闭基础连接并断开与服务器的连接。
+     *
+     * @return bool
+     */
+    public function close()
+    {
+        $this->command('quit');
+        return true;
+    }
+
+    /**
      * 运行命令在 Redis Server 上
      *
      * @param string $method
