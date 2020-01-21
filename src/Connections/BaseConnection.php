@@ -34,7 +34,6 @@ abstract class BaseConnection
      */
     public function command($method, array $params = [])
     {
-        $this->client->lPush('chuxiang_command', json_encode(compact('method', 'params')));
         return $this->client->{$method}(...$params);
     }
 
